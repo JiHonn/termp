@@ -30,7 +30,7 @@ public class Body2 extends JPanel {
 		ch = temp;
 
 		setPreferredSize(new Dimension(800, 700));
-		img = new ImageIcon("C:/Users/MELEE/eclipse-workspace/TP/src/TP/Background2.gif");
+		img = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/Background2.gif");
 
 		log = new JTextArea();
 		log.setFont(new Font("Serif", Font.PLAIN, 14));
@@ -59,57 +59,67 @@ public class Body2 extends JPanel {
 		getitem.setFont(new Font("Serif", Font.BOLD, 15));
 		add(getitem);
 
-		item1 = new JLabel("Item1 : 0");
+		item1 = new JLabel("Item1 :");
 		item1.setBounds(500, 150, 100, 30);
 		item1.setForeground(Color.cyan); // ID 글자색(핑크)
 		item1.setFont(new Font("Serif", Font.BOLD, 15));
 		add(item1);
 
-		item2 = new JLabel("Item2 : 0");
+		item2 = new JLabel("Item2 :");
 		item2.setBounds(500, 200, 100, 30);
 		item2.setForeground(Color.cyan); // ID 글자색(핑크)
 		item2.setFont(new Font("Serif", Font.BOLD, 15));
 		add(item2);
 
-		item3 = new JLabel("Item3 : 0");
+		item3 = new JLabel("Item3 :");
 		item3.setBounds(500, 250, 100, 30);
 		item3.setForeground(Color.cyan); // ID 글자색(핑크)
 		item3.setFont(new Font("Serif", Font.BOLD, 15));
 		add(item3);
 
-		item4 = new JLabel("Item4 : 0");
+		item4 = new JLabel("Item4 :");
 		item4.setBounds(500, 300, 100, 30);
 		item4.setForeground(Color.cyan); // ID 글자색(핑크)
 		item4.setFont(new Font("Serif", Font.BOLD, 15));
 		add(item4);
 
-		button = new JButton("게임종료");
-		button.setSize(150, 75);
-		button.setLocation(300, 600);
+		ImageIcon normalIcon = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/gameover.gif");
+		button = new JButton("게임종료",normalIcon);
+		button.setSize(250, 90);
+		button.setLocation(250, 550);
 		button.addActionListener(new ChangeListener());
+		button.setBorderPainted(false); 
+		button.setFocusPainted(false); 
+		button.setContentAreaFilled(false); 
+		//button.addActionListener(this);
+
 		add(button);
 
-		map1 = new JButton("맵1");
-		map1.setSize(70, 50);
+		ImageIcon normalIcon1 = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/num1.png");
+		map1 = new JButton("맵1",normalIcon1);
+		map1.setSize(80, 60);
 		map1.setLocation(500, 350);
 		map1.addActionListener(new Map1Listener());
 		add(map1);
 
-		map2 = new JButton("맵2");
-		map2.setSize(70, 50);
-		map2.setLocation(600, 350);
+		ImageIcon normalIcon2 = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/num2.png");
+		map2 = new JButton("맵2",normalIcon2);
+		map2.setSize(80, 60);
+		map2.setLocation(650, 350);
 		map2.addActionListener(new Map2Listener());
 		add(map2);
 
-		map3 = new JButton("맵3");
-		map3.setSize(70, 50);
+		ImageIcon normalIcon3 = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/num3.png");
+		map3 = new JButton("맵3",normalIcon3);
+		map3.setSize(80, 60);
 		map3.setLocation(500, 450);
 		map3.addActionListener(new Map3Listener());
 		add(map3);
 
-		map4 = new JButton("맵4");
-		map4.setSize(70, 50);
-		map4.setLocation(600, 450);
+		ImageIcon normalIcon4 = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/num4.png");
+		map4 = new JButton("맵4",normalIcon4);
+		map4.setSize(80, 60);
+		map4.setLocation(650, 450);
 		map4.addActionListener(new Map4Listener());
 		add(map4);
 	}
@@ -390,4 +400,4 @@ class Map4 extends Thread {
 			}
 		}
 	}
-}
+
