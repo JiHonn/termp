@@ -7,16 +7,14 @@ import java.awt.event.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.*;
-import java.net.*;
 
 public class Body1 extends JPanel {
 	private JButton button;
 	private PictureChange ch;
-	private ImageIcon img;
+	private ImageIcon img,img2;
 	private JLabel la1, la2;
 	private JTextField tf;
 	private JPasswordField pf;
-	private String id = null, pw = null;
 
 	public Body1(PictureChange temp) {
 		setLayout(null);
@@ -28,8 +26,10 @@ public class Body1 extends JPanel {
 		pf = new JPasswordField();
 
 		setPreferredSize(new Dimension(500, 300));
-		img = new ImageIcon("C:/Users/MELEE/eclipse-workspace/TP/src/TP/Background1.gif");
-
+		img = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/Background1.gif");
+		ImageIcon normalIcon = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/login1.png"); 
+		ImageIcon rolloverIcon = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/login2.png"); 
+		ImageIcon pressedIcon = new ImageIcon("C:/Users/Gram11/eclipse-workspace/Termproject/src/login2.png");
 		la1.setBounds(120, 40, 50, 20);
 		la1.setForeground(Color.pink);
 		la1.setFont(new Font("Serif", Font.BOLD, 15));
@@ -44,28 +44,25 @@ public class Body1 extends JPanel {
 		add(la2);
 		add(pf);
 
-		button = new JButton("sign in");
-		button.setSize(100, 50);
-		button.setLocation(200, 200);
+		button = new JButton("sign in", normalIcon);
+		button.setSize(130, 50); 
+		button.setLocation(180, 200); 
+		button.setPressedIcon(pressedIcon);
+		button.setRolloverIcon(rolloverIcon);
 		button.addActionListener(new ChangeListener());
 		add(button);
 	}
 
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g)
+    {
 		super.paintComponent(g);
-		g.drawImage(img.getImage(), 0, 0, this);
-	}
+        g.drawImage(img.getImage(), 0, 0, this);
+       
+    }
 
 	private class ChangeListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			id = tf.getText();
-			pw = pf.getText();
-			if (id.equals("st1") && pw.equals("1")) {
-				ch.change("picture2");
-			}
-			if (id.equals("st2") && pw.equals("2")) {
-				ch.change("picture2");
-			}
+			ch.change("picture2");
 		}
 	}
 }
